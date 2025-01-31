@@ -19,6 +19,7 @@ const TodoApp = () => {
     setTodos(todos.filter((_, i) => i !== index));
   };
 
+  
   return (
     <div className="todo-container">
       <h2>TODO APP</h2>
