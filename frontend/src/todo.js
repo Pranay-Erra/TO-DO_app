@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./todo.css";
 
 const TodoApp = () => {
   const [todos, setTodos] = useState([]);
@@ -16,19 +17,27 @@ const TodoApp = () => {
   };
 
   return (
-    <div style={{ textAlign: "center", marginTop: "50px" }}>
-      <h2>TODO App</h2>
+    <div className="todo-container">
+      <h2>TODO APP</h2>
       <input
         type="text"
+        className="todo-input"
         value={input}
         onChange={(e) => setInput(e.target.value)}
         placeholder="Enter a task"
       />
-      <button onClick={addTodo}>Add</button>
-      <ul>
+      <br/>
+      <br/>
+      <button className="add-btn" onClick={addTodo}>
+        Add
+      </button>
+      <ul className="todo-list">
         {todos.map((todo, index) => (
-          <li key={index}>
-            {todo} <button onClick={() => deleteTodo(index)}>Delete</button>
+          <li key={index} className="todo-item">
+            {todo} 
+            <button className="delete-btn" onClick={() => deleteTodo(index)}>
+              Delete
+            </button>
           </li>
         ))}
       </ul>
