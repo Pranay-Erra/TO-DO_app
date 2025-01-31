@@ -10,6 +10,9 @@ const TodoApp = () => {
       setTodos([...todos, input]);
       setInput("");
     }
+    else{
+      alert("Provide the Input")
+    }
   };
 
   const deleteTodo = (index) => {
